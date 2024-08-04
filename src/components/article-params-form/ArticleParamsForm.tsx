@@ -1,6 +1,6 @@
 import { ArrowButton } from 'components/arrow-button';
 import { Button } from 'components/button';
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import clsx from 'clsx';
 import { Select } from '../select';
 import { SyntheticEvent } from 'react';
@@ -13,7 +13,7 @@ import { Text } from '../text';
 
 type ArticleParamsFormProps = {
 	currentArticleState: ArticleStateType,
-	setCurrentArticleState: (param: any) => void
+	setCurrentArticleState: (param: ArticleStateType) => void
 }
 
 export const ArticleParamsForm = ({ currentArticleState, setCurrentArticleState }: ArticleParamsFormProps) => {
@@ -48,20 +48,20 @@ export const ArticleParamsForm = ({ currentArticleState, setCurrentArticleState 
 			contentWidth: defaultArticleState.contentWidth,
 			backgroundColor: defaultArticleState.backgroundColor
 		})
-        setNewFontFamilyOption(fontFamilyOptions[0]);
-		setNewBackgroundColor(backgroundColors[0]);
-		setNewContentWidth(contentWidthArr[0]);
-		setNewFontSizeOption(fontSizeOptions[0]);
-		setNewFontColor(fontColors[0]);
+        setNewFontFamilyOption(defaultArticleState.fontFamilyOption);
+		setNewBackgroundColor(defaultArticleState.backgroundColor);
+		setNewContentWidth(defaultArticleState.contentWidth);
+		setNewFontSizeOption(defaultArticleState.fontSizeOption);
+		setNewFontColor(defaultArticleState.fontColor);
 	}
 
 	return (
 		<>
 			<ArrowButton onClick={setIsOpenForm} isOpenForm={isOpenForm} />
 			<aside ref={rootRef} className={clsx(styles.container, isOpenForm && styles.container_open)}>
-				<form className={styles.form} onSubmit={formSubmitHandler} onAbort={formResetHandler}>
+				<form className={styles.form} onSubmit={formSubmitHandler} >
 					<Text as='h2' size={31} weight={800} uppercase align='left'>Задайте параметры</Text>
-					<Select options={fontFamilyOptions} selected={newFontFamilyOption} title='Шрифт' onChange={setNewFontFamilyOption}></Select>
+					<Select options={fontFamilyOptions} selected={newFontFamilyOption} title='Шрифт' onChange={setNewFontFamilyOption}/>
 					<RadioGroup name='Размер' options={fontSizeOptions} selected={newFontSizeOption} title='Размер шрифта' onChange={setNewFontSizeOption}></RadioGroup>
 					<Select options={fontColors} selected={newFontColor} title='Цвет шрифта' onChange={setNewFontColor}></Select>
 					<Separator></Separator>

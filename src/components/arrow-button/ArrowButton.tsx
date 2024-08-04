@@ -1,6 +1,5 @@
 import arrow from 'src/images/arrow.svg';
-import React, { SyntheticEvent, useEffect } from 'react';
-import { useState } from 'react';
+import  { SyntheticEvent, useEffect } from 'react';
 import styles from './ArrowButton.module.scss';
 import clsx from 'clsx';
 
@@ -14,7 +13,7 @@ export const ArrowButton = ({ onClick, isOpenForm }: { onClick?: OnClick, isOpen
 
 	}
 	useEffect(() => {
-		console.log('RENDER')
+		
 	}, [])
 	return (
 		/* Не забываем указаывать role и aria-label атрибуты для интерактивных элементов */
@@ -24,7 +23,7 @@ export const ArrowButton = ({ onClick, isOpenForm }: { onClick?: OnClick, isOpen
 			tabIndex={0}
 			className={clsx(styles.container, { [styles.container_open]: isOpenForm })}
 			onClick={(e: SyntheticEvent) => {
-				e.stopPropagation();
+				//e.stopPropagation();
 				arrowClickHandler();
 			}}>
 			<img src={arrow} alt='иконка стрелочки' className={clsx(styles.arrow, { [styles.arrow_open]: isOpenForm })} />
