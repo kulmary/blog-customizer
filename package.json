@@ -4,13 +4,14 @@
 	"main": "index.js",
 	"license": "MIT",
 	"devDependencies": {
-		"@pmmmwh/react-refresh-webpack-plugin": "^0.5.10",
+		"@pmmmwh/react-refresh-webpack-plugin": "^0.5.13",
 		"@storybook/addon-essentials": "^7.6.10",
 		"@storybook/addon-interactions": "^7.6.10",
 		"@storybook/addon-links": "^7.6.10",
 		"@storybook/addon-onboarding": "^1.0.10",
 		"@storybook/addon-styling-webpack": "^0.0.6",
 		"@storybook/blocks": "^7.6.10",
+		"@storybook/cli": "^8.1.0",
 		"@storybook/react": "^7.6.10",
 		"@storybook/react-webpack5": "^7.6.10",
 		"@storybook/test": "^7.6.10",
@@ -41,7 +42,7 @@
 		"mini-css-extract-plugin": "^2.7.6",
 		"postcss-loader": "^7.3.3",
 		"prettier": "^2.8.8",
-		"react-refresh": "^0.14.0",
+		"react-refresh": "^0.14.2",
 		"resolve-url-loader": "^5.0.0",
 		"sass": "^1.69.7",
 		"sass-loader": "^13.3.3",
@@ -78,8 +79,8 @@
 	},
 	"dependencies": {
 		"clsx": "^2.1.0",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1"
 	},
 	"lint-staged": {
 		"*.{css,scss}": "yarn stylelint:fix",
